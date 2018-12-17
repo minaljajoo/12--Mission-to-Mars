@@ -1,0 +1,106 @@
+html{
+    position: relative;
+    min-height: 100%;
+    margin: 0px;
+}
+body {
+    background: url("/static/Images/space.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #e6ffff;
+      }
+.navbar{
+    background: url("/static/Images/space.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-bottom-color: #efb78f;
+    border-width: 5px;
+    border-bottom-style: solid;  
+}
+.navbar .navbar-brand {
+    background:  black;
+    max-height: 130px;
+    max-width: 150px;
+    border-color: #efb78f;
+    border-width: 10px;   
+    border-style:groove;
+}
+.navbar .navbar-brand:hover,
+.navbar .navbar-brand:focus {
+    background: #9c4e16;
+  
+}
+.navbar-toggler {
+    padding-left: 20px;
+    border-color: #c0392b;
+  }
+
+  .navbar .navbar-toggler:hover,
+  .navbar .navbar-toggler:focus {
+    background-color: #c0392b;
+  }
+  
+.jumbotron {
+    background: url("/static/Images/nav.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-height: 200px;
+    margin-right:-15px;
+    margin-left:-5px;  
+}
+.card-text{
+    background-color:#802b00;
+    color:#33ff33;
+    font-weight:bold;
+     text-align:center; 
+     padding: 15px 20px 15px 20px;
+}
+h2,h3,h5{
+    color: yellow;
+    font-weight: bold; 
+}
+h1{
+    color: #1E90FF;
+    font-weight: bold; 
+}
+h4{
+    color: #33ff33;
+    font-weight: bold; 
+}
+img{  
+    width: 100%; 
+   align-content: center;     
+}
+.border{
+    border: 1px solid #efb78f;
+}
+table.dataframe, .dataframe th, .dataframe td {
+    padding-left: 10px;
+    border: 1px solid #efb78f;
+    text-align:left;
+    color:#e6ffff;
+    background-color:#1a1a1a;
+  }
+.highlight{
+    border-color: #99ff33;
+    border-style: solid;
+    border-width: 5px;  
+}
+footer{
+    position: absolute;
+    visibility: visible;
+    
+    padding: 10px;
+    left:0;
+    bottom: -50px;
+    height:60px;
+    background-color:#0d0d0d;
+    color: #e6ffff;
+    text-align: center;
+    width: 100%; 
+    border-top: 20px;  
+    border-top-color:#efb78f;
+    border-width: 5px;
+    border-top-style: solid;    
+    }
+   

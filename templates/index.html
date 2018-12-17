@@ -1,0 +1,144 @@
+<!--  Mars Prject: Mission to Mars -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- All meta tags should be first in the header-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Title of dashboard-->
+  <title>Mission to Mars</title>
+  <!-- Bootstrap links -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <!-- Scripts-->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../static/css/style.css?121720181">
+</head>       
+<body>
+  <!-- navbar: A horizontal bar,top of a web page, offering a number of links to help the viewer to navigate the web site. Origin: Shortening of navigation bar. -->
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container-fluid">
+      <a class="navbar-brand py-0" href="/">
+        <img src="/static/Images/home_tab.png" style = "width: 85%;  align-content: center" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class ="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="nav navbar-nav ">
+        <!--Mars News page -->
+          <li class ="nav-item">
+            <a class ="nav-link" href="#news"><i class="far fa-newspaper"></i> Mars News</a>
+          </li>
+          <!--JPL Mars Space Images - Featured Image -->
+          <li class = "nav-item">
+            <a class ="nav-link" href="#image"> <i class="far fa-image"></i> Featured Image</a>
+          </li>
+          <li class = "nav-item">
+            <a class ="nav-link" href="#weather"><i class="fa fa-cloud"></i> Mars Weather</a>
+            <li class = "nav-item">
+              <a class ="nav-link" href="#facts"><i class="fas fa-table"></i> Mars Facts</a>
+            </li>
+            <li class = "nav-item">
+              <a class ="nav-link" href="#hemispheres"><i class="fas fa-images"></i> Mars Hemispheres</a>
+            </li>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End of the Navigation bar-->
+  <!-- Button for the Mars data scrape -->
+  <div class ="container-fluid" style = "padding-bottom:30px;">
+    <div class="jumbotron text-center highlight" >
+      <h1><i class="fas fa-space-shuttle"></i> Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+    <!--Display the latest news of Mars-->
+    <div class = "row" style="padding-left:40px;">
+      <div class ="col-md-10">
+        <h2 id="news">
+          <img class = "border" src="/static/Images/nasa.jpg" style = "width: 10%;" alt="nasa"> Latest Mars News <i class="far fa-newspaper"></i>
+        </h2>
+        <h4>
+          {{ mars_data.mars_news[0]}}
+        </h4>
+        <p><strong>
+          {{ mars_data.mars_news[1]}}
+        </strong></p>
+        <p>{{ mars_data.mars_news[2]}}</p>
+        <p><a class="btn btn-primary btn-xm" href="#top" role="button">Top <i class="fas fa-space-shuttle"></i> Mars </a></p>
+      </div>
+      <!--Display the featured Mars image-->
+      <div class = "row">
+        <div class ="col-md-6">
+          <h2 id="image">  <i class="far fa-image"></i> Featured Mars Image  <br>
+          <img class = "border" src="{{ mars_data.featured_image_url }}"  alt="Featured Mars image">
+          </h2>
+          <p><a class="btn btn-primary btn-xm" href="#top" role="button">Top <i class="fas fa-space-shuttle"></i> Mars </a></p> 
+        </div>
+    
+        <div class ="col-md-6" style="padding-right:30px; padding-left:30px;">
+          <div class="row">
+            <div class ="col-md-11">
+            <!--Display Mars weather -->
+              <div id="weather" class="card bg-info text-center" style="border-color:blanchedalmond; border-width:5px;">
+                <div class="card-body">
+                  <h2 class="card-title" style= "color:#802b00;"> <i class="fa fa-cloud"></i>  Current Weather on Mars</h2>
+                  <p class="card-text" style = "text-align: left;">  {{ mars_data.mars_weather}}</p>
+                </div>
+              </div>
+              <p style = "padding-top:10px;"><a class="btn btn-primary btn-xm" href="#top" role="button">Top <i class="fas fa-space-shuttle"></i> Mars </a></p>
+            </div>
+            <br>
+            <br>
+            <!--Display the Mars planet profile-->
+            <div class ="col-md-8" style="padding-top:30px;" >
+            <h2 id="facts"><i class="fas fa-table"></i>  Mars Facts </h2>
+            <h4 >Mars Planet Profile</h4>
+            {{ mars_data.mars_facts | safe}}
+            </div>
+          </div>
+          <p style = "padding-top:10px;"><a class="btn btn-primary btn-xm"  href="#top" role="button">Top <i class="fas fa-space-shuttle"></i> Mars </a></p>
+        </div>   
+      
+      </div>  
+      <div class ="col-md-11">
+    <h2 id="hemispheres" style = "text-align:center;">
+        <i class="fas fa-images"></i>   Mars Hemispheres 
+    </h2>
+      <!-- Loop through the dictionary -->
+        
+      {% for data in mars_data.mars_hemispheres %}
+     
+        <div class="card bg-success " style="width: 28em; margin:10px ; padding-right:30px; padding-left:30px; float:left;">
+
+            <img class="card-img-top rounded" src="{{ data.img_url }}" style ="width: 100%; " alt="hemispheres" >
+            <div class="card-text" > {{data.title}} </div>
+        
+          </div>
+
+        {% endfor %} 
+    
+      </div>
+    </div> 
+    <p style = "padding-top:10px;"><a class="btn btn-primary btn-xm" href="#top" role="button">Top <i class="fas fa-space-shuttle"></i> Mars </a></p>
+  </div>
+    
+                  
+  <!-- Footer -->
+  <footer>
+  <!-- Copyright -->
+    <p><i class="far fa-copyright"></i>
+    Copyright 2018: Minal Jajoo. All Rights Reserved.
+    </p>      
+  </footer>
+                 
+</body>
+</html>

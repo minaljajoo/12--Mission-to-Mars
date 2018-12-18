@@ -1,9 +1,39 @@
 # Mission to Mars
+![mission_to_mars](static/Images/mission_to_mars.jpg)
 
-![mission_to_mars](Images/mission_to_mars.jpg)
+In this assignment, you will build a web application that scrapes various websites for data related to the Mission to Mars and displays the information in a single HTML page. 
 
-In this assignment, you will build a web application that scrapes various websites for data related to the Mission to Mars and displays the information in a single HTML page. The following outlines what you need to do.
+## List of Files:
+* [app.py](app.py) - Flask application
+* [scrape_mars.py](scrape_mars.py) - Scrape the data from various websites 
+* [/templates/index.html](/templates/index.html) - Web page for displaying latest Mars information
+* [scraping/mission_to_mars.ipynb](scraping/mission_to_mars.ipynb) - use this to complete all the scraping and analysis tasks
+* [/static/Images](/static/Images) - Store all the static images
+* [/static/css/style.css](/static/css/style.css) - style.css file for web page
 
+## Instructions
+
+1. Dependencies:
+* pandas 
+* splinter 
+* splinter.exceptions
+* BeautifulSoup
+* pymongo
+* requests
+* time
+* Flask
+
+2.  MongoDB running with a connection on ```localhost:27017```
+
+3.  Flask application:
+```
+python app.py
+```
+
+4. Open http://127.0.0.1:5000 a web browser and click on ```Scrape New Data``` for latest updates
+
+
+ ## The following outlines what you need to do.
 ## Step 1 - Scraping
 
 Complete your initial scraping using Jupyter Notebook, BeautifulSoup, Pandas, and Requests/Splinter.
@@ -87,8 +117,8 @@ Use MongoDB with Flask templating to create a new HTML page that displays all of
 
 * Create a template HTML file called `index.html` that will take the mars data dictionary and display all of the data in the appropriate HTML elements. Use the following as a guide for what the final product should look like, but feel free to create your own design.
 
-![final_app_part1.png](Images/final_app_part1.png)
-![final_app_part2.png](Images/final_app_part2.png)
+![final_app_part1.png](static/Images/final_app_part1.png)
+![final_app_part2.png](static/Images/final_app_part2.png)
 
 - - -
 

@@ -9,6 +9,10 @@ body {
     background-repeat: no-repeat;
     color: #e6ffff;
       }
+.container {
+     width: 1024px;
+     position: relative;
+        }
 .navbar{
     background: url("/static/Images/space.png");
     background-size: cover;
